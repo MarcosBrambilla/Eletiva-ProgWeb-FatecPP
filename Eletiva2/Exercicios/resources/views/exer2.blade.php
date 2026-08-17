@@ -1,5 +1,5 @@
 @extends('layout')
-@section('titulo', 'Exercicio1')
+@section('titulo', 'Exercicio2')
 @section('conteudo')
     <h1>Exercicio 2</h1>
     <form method="post" action="/exer2resp">

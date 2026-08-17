@@ -62,7 +62,8 @@ class ExerciciosController extends Controller
 
         return view('exer4', ['divisao' => $divisao ]);
     }
-    //exercicio 4 Média nota
+
+    //exercicio 5 Média nota
     public function abrirFormExer5()
     {
         return view('exer5');
@@ -76,5 +77,19 @@ class ExerciciosController extends Controller
         $media = ($valor1 + $valor2 + $valor3) / 3;
 
         return view('exer5', ['media' => $media ]);
+    }
+
+    //exercicio 6 Converter temperatura
+    public function abrirFormExer6()
+    {
+        return view('exer6');
+    }
+    public function respostaExer6(Request $request)
+    {
+        $valor1 = $request->valor1;
+
+        $temperatura = ($valor1 * 9 / 5) + 32;
+
+        return view('exer6', ['temperatura' => $temperatura ]);
     }
 }

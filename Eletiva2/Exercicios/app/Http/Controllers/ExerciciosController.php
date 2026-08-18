@@ -105,4 +105,18 @@ class ExerciciosController extends Controller
 
         return view('exer7', ['temperatura' => $temperatura ]);
     }
+
+    public function abrirFormExer8()
+    {
+        return view('exer8');
+    }
+    public function respostaExer8(Request $request)
+    {
+        $valor1 = $request->valor1;
+        $valor2 = $request->valor2;
+
+        $area = $valor1 * $valor2;
+
+        return view('exer8', ['area' => $area ]);
+    }
 }

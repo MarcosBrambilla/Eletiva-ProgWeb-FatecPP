@@ -92,4 +92,17 @@ class ExerciciosController extends Controller
 
         return view('exer6', ['temperatura' => $temperatura ]);
     }
+
+    public function abrirFormExer7()
+    {
+        return view('exer7');
+    }
+    public function respostaExer7(Request $request)
+    {
+        $valor1 = $request->valor1;
+
+        $temperatura = ($valor1 - 32) * 5 / 9;
+
+        return view('exer7', ['temperatura' => $temperatura ]);
+    }
 }

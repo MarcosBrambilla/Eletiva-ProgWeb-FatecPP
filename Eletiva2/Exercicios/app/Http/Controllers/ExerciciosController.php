@@ -119,4 +119,17 @@ class ExerciciosController extends Controller
 
         return view('exer8', ['area' => $area ]);
     }
+
+    public function abrirFormExer9()
+    {
+        return view('exer9');
+    }
+    public function respostaExer9(Request $request)
+    {
+        $valor1 = $request->valor1;
+
+        $area = pi() * ($valor1 ** 2);
+
+        return view('exer9', ['area' => $area ]);
+    }
 }

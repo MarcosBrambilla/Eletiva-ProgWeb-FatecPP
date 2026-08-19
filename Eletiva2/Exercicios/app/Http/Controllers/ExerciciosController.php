@@ -179,4 +179,18 @@ class ExerciciosController extends Controller
 
         return view('exer12', ['resultado' => $resultado]);
     }
+
+    //exercicio 13 Metros para Centímetros
+    public function abrirFormExer13()
+    {
+        return view('exer13');
+    }
+    public function respostaExer13(Request $request)
+    {
+        $valor1 = $request->valor1;
+
+        $centimetros = $valor1 * 100;
+
+        return view('exer13', ['centimetros' => $centimetros]);
+    }
 }

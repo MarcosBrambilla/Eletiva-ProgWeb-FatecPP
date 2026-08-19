@@ -193,4 +193,18 @@ class ExerciciosController extends Controller
 
         return view('exer13', ['centimetros' => $centimetros]);
     }
+
+    //exercicio 14 Quilômetros para Milhas
+    public function abrirFormExer14()
+    {
+        return view('exer14');
+    }
+    public function respostaExer14(Request $request)
+    {
+        $valor1 = $request->valor1;
+
+        $milhas = $valor1 * 0.621371;
+
+        return view('exer14', ['milhas' => $milhas]);
+    }
 }

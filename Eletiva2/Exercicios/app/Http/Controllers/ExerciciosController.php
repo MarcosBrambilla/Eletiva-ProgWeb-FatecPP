@@ -241,4 +241,20 @@ class ExerciciosController extends Controller
 
         return view('exer16', ['precoComDesconto' => $precoComDesconto]);
     }
+
+    //exercicio 17 Juros Simples
+    public function abrirFormExer17()
+    {
+        return view('exer17');
+    }
+    public function respostaExer17(Request $request)
+    {
+        $valor1 = $request->valor1;
+        $valor2 = $request->valor2;
+        $valor3 = $request->valor3;
+
+        $juros = $valor1 * ($valor2 / 100) * $valor3;
+
+        return view('exer17', ['juros' => $juros]);
+    }
 }

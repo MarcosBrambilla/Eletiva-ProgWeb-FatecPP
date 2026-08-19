@@ -226,4 +226,19 @@ class ExerciciosController extends Controller
 
         return view('exer15', ['imc' => $imc]);
     }
+
+    //exercicio 16 Preço com Desconto
+    public function abrirFormExer16()
+    {
+        return view('exer16');
+    }
+    public function respostaExer16(Request $request)
+    {
+        $valor1 = $request->valor1;
+        $valor2 = $request->valor2;
+
+        $precoComDesconto = $valor1 - ($valor1 * ($valor2 / 100));
+
+        return view('exer16', ['precoComDesconto' => $precoComDesconto]);
+    }
 }

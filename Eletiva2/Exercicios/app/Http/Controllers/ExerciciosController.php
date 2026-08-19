@@ -274,4 +274,25 @@ class ExerciciosController extends Controller
 
         return view('exer18', ['montante' => $montante]);
     }
+
+    //exercicio 19 Dias para Horas, Minutos e Segundos
+    public function abrirFormExer19()
+    {
+        return view('exer19');
+    }
+    public function respostaExer19(Request $request)
+    {
+        $valor1 = $request->valor1;
+
+        $horas = $valor1 * 24;
+        $minutos = $horas * 60;
+        $segundos = $minutos * 60;
+
+        return view('exer19', [
+            'dias' => $valor1,
+            'horas' => $horas,
+            'minutos' => $minutos,
+            'segundos' => $segundos
+        ]);
+    }
 }

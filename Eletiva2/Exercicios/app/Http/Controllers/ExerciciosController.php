@@ -295,4 +295,23 @@ class ExerciciosController extends Controller
             'segundos' => $segundos
         ]);
     }
+
+    //exercicio 20 Velocidade Média
+    public function abrirFormExer20()
+    {
+        return view('exer20');
+    }
+    public function respostaExer20(Request $request)
+    {
+        $valor1 = $request->valor1;
+        $valor2 = $request->valor2;
+
+        if ($valor2 == 0) {
+            $velocidadeMedia = "Erro: O tempo deve ser maior que zero!";
+        } else {
+            $velocidadeMedia = $valor1 / $valor2;
+        }
+
+        return view('exer20', ['velocidadeMedia' => $velocidadeMedia]);
+    }
 }

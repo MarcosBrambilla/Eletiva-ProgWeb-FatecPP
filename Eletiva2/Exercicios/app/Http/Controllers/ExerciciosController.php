@@ -257,4 +257,21 @@ class ExerciciosController extends Controller
 
         return view('exer17', ['juros' => $juros]);
     }
+
+    //exercicio 18 Juros Compostos
+    public function abrirFormExer18()
+    {
+        return view('exer18');
+    }
+    public function respostaExer18(Request $request)
+    {
+        $valor1 = $request->valor1;
+        $valor2 = $request->valor2;
+        $valor3 = $request->valor3;
+
+        $taxa = $valor2 / 100;
+        $montante = $valor1 * ((1 + $taxa) ** $valor3);
+
+        return view('exer18', ['montante' => $montante]);
+    }
 }

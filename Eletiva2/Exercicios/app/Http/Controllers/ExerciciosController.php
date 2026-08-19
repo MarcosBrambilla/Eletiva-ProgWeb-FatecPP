@@ -207,4 +207,23 @@ class ExerciciosController extends Controller
 
         return view('exer14', ['milhas' => $milhas]);
     }
+
+    //exercicio 15 Cálculo do IMC
+    public function abrirFormExer15()
+    {
+        return view('exer15');
+    }
+    public function respostaExer15(Request $request)
+    {
+        $valor1 = $request->valor1;
+        $valor2 = $request->valor2;
+
+        if ($valor2 == 0) {
+            $imc = "Erro: Altura deve ser maior que zero!";
+        } else {
+            $imc = $valor1 / ($valor2 ** 2);
+        }
+
+        return view('exer15', ['imc' => $imc]);
+    }
 }

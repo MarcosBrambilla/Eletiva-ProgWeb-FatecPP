@@ -164,4 +164,19 @@ class ExerciciosController extends Controller
 
         return view('exer11', ['perimetro' => $perimetro]);
     }
+
+    //exercicio 12 Potenciação
+    public function abrirFormExer12()
+    {
+        return view('exer12');
+    }
+    public function respostaExer12(Request $request)
+    {
+        $valor1 = $request->valor1;
+        $valor2 = $request->valor2;
+
+        $resultado = $valor1 ** $valor2;
+
+        return view('exer12', ['resultado' => $resultado]);
+    }
 }

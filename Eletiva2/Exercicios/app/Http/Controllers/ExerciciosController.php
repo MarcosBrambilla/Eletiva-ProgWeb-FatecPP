@@ -58,7 +58,11 @@ class ExerciciosController extends Controller
         $valor1 = $request->valor1;
         $valor2 = $request->valor2;
 
-        $divisao = $valor1 / $valor2;
+        if ($valor2 == 0) {
+            $divisao = "Erro: Divisão por zero não é permitida!";
+        } else {
+            $divisao = $valor1 / $valor2;
+        }
 
         return view('exer4', ['divisao' => $divisao ]);
     }
@@ -131,5 +135,19 @@ class ExerciciosController extends Controller
         $area = pi() * ($valor1 ** 2);
 
         return view('exer9', ['area' => $area ]);
+    }
+
+    public function abrirFormExer10()
+    {
+        return view('exer10');
+    }
+    public function respostaExer10(Request $request)
+    {
+        $valor1 = $request->valor1;
+        $valor2 = $request->valor2;
+
+        $perimetro = 2 * ($valor1 + $valor2);
+
+        return view('exer10', ['perimetro' => $perimetro ]);
     }
 }
